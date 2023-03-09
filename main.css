@@ -21,7 +21,7 @@
     width: 50px;
     height: 50px;
     background-color: blueviolet;  
-    display: block;
+    display: none;
 }
 
 #Btn1{
@@ -38,10 +38,8 @@
     color: #fff;
 }
 #paragrap{
-    display: none;
 }
 #paragrap2{
-    display: none;
 }
 #Backgroud .content .diem{
     position: absolute;
@@ -52,4 +50,10 @@
 #Backgroud .content .diem p{
     color: red !important;
     display: inline-block;
+}
+.pgr{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
 }

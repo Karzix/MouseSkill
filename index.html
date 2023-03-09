@@ -11,25 +11,29 @@
 
 <body>
     <div id="Backgroud">
-        <div class="content">
-            <p id="paragrap">Chào mừng bạn đến với chương trình Kỹ năng sử dụng chuột cơ bản của Gray Olltwit Có 5 cấp
-                độ, mỗi cấp độ có 10 giai đoạn cần hoàn thành.
-                <br>
-            </p>
-            <p id="paragrap2">
-                Nhấn phím bất kỳ trên bàn phím hoặc nhấp chuột để bắt đầu và làm theo hướng dẫn ở giữa màn hình. Khi ở trong chương trình, nhấn Q để Thoát hoặc N cho cấp độ Tiếp theo.
-            </p>
+        <div class="content" >
+            <div class="pgr" onclick="ongame()">
+                <p id="paragrap">Chào mừng bạn đến với chương trình Kỹ năng sử dụng chuột cơ bản của Gray Olltwit Có 5
+                    cấp
+                    độ, mỗi cấp độ có 10 giai đoạn cần hoàn thành.
+                    <br>
+                </p>
+                <p id="paragrap2">
+                    Nhấn phím bất kỳ trên bàn phím hoặc nhấp chuột để bắt đầu và làm theo hướng dẫn ở giữa màn hình. Khi
+                    ở trong chương trình, nhấn Q để Thoát hoặc N cho cấp độ Tiếp theo.
+                </p>
+            </div>
             <div class="block" id="bl" onmouseover="rd()"></div>
             <button id="Btn1" onclick="btn1()">VNI</button>
             <button id="Btn2" onclick="btn2()">ENG</button>
             <div class="diem">
                 <p>Điểm: </p>
-                <p id="tinhdiem" >0</p>
+                <p id="tinhdiem">0</p>
             </div>
         </div>
     </div>
     <script>
-        let d=0;
+        let d = 0;
         function btn1() {
             document.getElementById('paragrap').innerHTML = 'Chào mừng bạn đến với chương trình Kỹ năng sử dụng chuột cơ bản của Gray Olltwit Có 5 cấp độ, mỗi cấp độ có 10 giai đoạn cần hoàn thành.';
             document.getElementById('paragrap2').innerHTML = 'Nhấn phím bất kỳ trên bàn phím hoặc nhấp chuột để bắt đầu và làm theo hướng dẫn ở giữa màn hình. Khi ở trong chương trình, nhấn Q để Thoát hoặc N cho cấp độ Tiếp theo.';
@@ -38,18 +42,33 @@
             document.getElementById('paragrap').innerHTML = 'Welcome to Gray Olltwit is Basic Mouse Skills program There are 5 levels, each with 10 stages to complete.'
             document.getElementById('paragrap2').innerHTML = 'Press any key on the keyboard or click to start and follow the instructions in the center of the screen. Once in the program, press Q for Exit or N for Next level.'
         }
-        function rd(){
-            var x =Math.random()*350;
-            var y =Math.random()*350;
-            var sx=x+"px";
-            var sy=y+"px";
-            document.getElementById('bl').style.marginTop=sx;
-            document.getElementById('bl').style.marginLeft=sy;
+        function rd() {
+            var wh = Math.random() * 50;
+            var s = 50 + wh;
+            var x = Math.random() * (400 - s);
+            // if(x<=0){
+            //     x=0;
+            // }
+            var y = Math.random() * (400 - s);
+            // if(y<=0){
+            //     y=0;
+            // }
+            var ss = s + "px";
+            var sx = x + "px";
+            var sy = y + "px";
+            document.getElementById('bl').style.marginTop = sx;
+            document.getElementById('bl').style.marginLeft = sy;
+            document.getElementById('bl').style.width = ss;
+            document.getElementById('bl').style.height = ss;
             d++;
-            var sd=d;
-            document.getElementById('tinhdiem').innerHTML=sd;
+            var sd = d;
+            document.getElementById('tinhdiem').innerHTML = sd;
         }
-
+        function ongame() {
+            document.getElementById('paragrap').style.display = 'none';
+            document.getElementById('paragrap2').style.display = 'none';
+            document.getElementById('bl').style.display = 'block';
+        }
     </script>
 </body>
 
