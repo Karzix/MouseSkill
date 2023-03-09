@@ -1,0 +1,46 @@
+*{
+    margin: 0 0;
+    box-sizing: border-box;
+}
+.Backgroud{
+    background-color: aqua;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+.content{
+    background-color: black;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: calc(50% - 200px);
+    bottom: calc(50% - 200px);
+}
+.block{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;  
+    display: block;
+}
+
+#Btn1{
+    position: absolute;
+    top:420px;
+
+}
+#Btn2{
+    position: absolute;
+    top:420px;
+    right: 0;
+}
+.content p{
+    margin: 10px;
+    color: #fff;
+}
+#paragrap{
+    display: none;
+}
+#paragrap2{
+    display: none;
+}
