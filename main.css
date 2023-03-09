@@ -2,7 +2,7 @@
     margin: 0 0;
     box-sizing: border-box;
 }
-.Backgroud{
+#Backgroud{
     background-color: aqua;
     position: fixed;
     width: 100%;
@@ -27,7 +27,6 @@
 #Btn1{
     position: absolute;
     top:420px;
-
 }
 #Btn2{
     position: absolute;
@@ -43,4 +42,14 @@
 }
 #paragrap2{
     display: none;
+}
+#Backgroud .content .diem{
+    position: absolute;
+    font-size: 30px;
+    top: 420px;
+    left: calc(50% - 70px);
+}
+#Backgroud .content .diem p{
+    color: red !important;
+    display: inline-block;
 }
