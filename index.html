@@ -11,7 +11,7 @@
 
 <body>
     <div id="Backgroud">
-        <div class="content" >
+        <div class="content" id="cnt">
             <div class="pgr" onclick="ongame()">
                 <p id="paragrap">Chào mừng bạn đến với chương trình Kỹ năng sử dụng chuột cơ bản của Gray Olltwit Có 5
                     cấp
@@ -23,7 +23,7 @@
                     ở trong chương trình, nhấn Q để Thoát hoặc N cho cấp độ Tiếp theo.
                 </p>
             </div>
-            <div class="block" id="bl" onmouseover="rd()"></div>
+            <div class="block" id="bl"></div>
             <button id="Btn1" onclick="btn1()">VNI</button>
             <button id="Btn2" onclick="btn2()">ENG</button>
             <div class="diem">
@@ -34,6 +34,7 @@
     </div>
     <script>
         let d = 0;
+        var wh=100;
         function btn1() {
             document.getElementById('paragrap').innerHTML = 'Chào mừng bạn đến với chương trình Kỹ năng sử dụng chuột cơ bản của Gray Olltwit Có 5 cấp độ, mỗi cấp độ có 10 giai đoạn cần hoàn thành.';
             document.getElementById('paragrap2').innerHTML = 'Nhấn phím bất kỳ trên bàn phím hoặc nhấp chuột để bắt đầu và làm theo hướng dẫn ở giữa màn hình. Khi ở trong chương trình, nhấn Q để Thoát hoặc N cho cấp độ Tiếp theo.';
@@ -42,33 +43,52 @@
             document.getElementById('paragrap').innerHTML = 'Welcome to Gray Olltwit is Basic Mouse Skills program There are 5 levels, each with 10 stages to complete.'
             document.getElementById('paragrap2').innerHTML = 'Press any key on the keyboard or click to start and follow the instructions in the center of the screen. Once in the program, press Q for Exit or N for Next level.'
         }
+
+        const event=document.querySelector('.block');
+            // if(d==5){
+            //     document.getElementById('bl').style.display='none';
+            //     document.getElementById('paragrap').innerHTML='Level 2';
+            //     document.getElementById('paragrap').style.display='block';
+            // }
         function rd() {
-            var wh = Math.random() * 50;
-            var s = 50 + wh;
-            var x = Math.random() * (400 - s);
-            // if(x<=0){
-            //     x=0;
-            // }
-            var y = Math.random() * (400 - s);
-            // if(y<=0){
-            //     y=0;
-            // }
-            var ss = s + "px";
+            wh=wh-20;
+            if(wh<=20){
+                wh=20;
+            }
+            var x = Math.random() * (400 - wh);
+            var y = Math.random() * (400 - wh);
             var sx = x + "px";
             var sy = y + "px";
-            document.getElementById('bl').style.marginTop = sx;
-            document.getElementById('bl').style.marginLeft = sy;
-            document.getElementById('bl').style.width = ss;
-            document.getElementById('bl').style.height = ss;
+            document.getElementById('bl').style.top = sx;
+            document.getElementById('bl').style.left = sy;
+            document.getElementById('bl').style.width = wh+"px";
+            document.getElementById('bl').style.height = wh+"px";
             d++;
-            var sd = d;
-            document.getElementById('tinhdiem').innerHTML = sd;
+            document.getElementById('tinhdiem').innerHTML = d;
+            lv();
         }
+        event.addEventListener('mouseover', rd);
+       
+        
+        function lv(){
+            if(d==5){
+                wh=100;
+                document.getElementById('paragrap').innerHTML="lv2";
+                document.getElementById('paragrap').style.display='block';
+                document.getElementById('bl').style.display='none';
+            }
+            if(d>=5 && d<10){
+                event.removeEventListener('mouseover', rd);
+                event.addEventListener('click', rd);
+            }
+        }
+
         function ongame() {
             document.getElementById('paragrap').style.display = 'none';
             document.getElementById('paragrap2').style.display = 'none';
             document.getElementById('bl').style.display = 'block';
         }
+       
     </script>
 </body>
 
