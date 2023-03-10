@@ -68,9 +68,6 @@
             document.getElementById('bl').style.left = sy;
             document.getElementById('bl').style.width = wh+"px";
             document.getElementById('bl').style.height = wh+"px";
-            // d++;
-            // document.getElementById('tinhdiem').innerHTML = d;
-            // lv();
         }
         function tinhdiem(){
             d++;
@@ -82,29 +79,21 @@
         function lv(){
             if(d==4){
                 wh=100;
-                // document.getElementById('bl').style.width = wh+"px";
-                // document.getElementById('bl').style.height = wh+"px";
                 rd();
-                document.getElementById('paragrap').innerHTML="lv2";
+                document.getElementById('paragrap').innerHTML="lv2: click";
                 document.getElementById('paragrap').style.display='block';
                 document.getElementById('bl').style.display='none';
-            }
-            if(d>=4 && d<9){
                 event.removeEventListener('mouseover', gameplay);
                 event.addEventListener('click', gameplay);
             }
             if(d==9){
                 wh=100;
-                // document.getElementById('bl').style.width = wh+"px";
-                // document.getElementById('bl').style.height = wh+"px";
                 rd();
-                document.getElementById('paragrap').innerHTML="lv3";
+                document.getElementById('paragrap').innerHTML="lv3: double click";
                 document.getElementById('paragrap').style.display='block';
                 document.getElementById('bl').style.display='none';
-            }
-            if(d>=9 && d<19){
-                event.removeEventListener('mouseover', gameplay);
-                event.addEventListener('click', gameplay);
+                event.removeEventListener('click', gameplay);
+                event.addEventListener('dblclick', gameplay);
             }
         }
 
