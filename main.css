@@ -20,8 +20,6 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    min-width: 20px;
-    min-height: 20px;
     background-color: blueviolet;  
     display: none;
 }

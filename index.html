@@ -52,16 +52,16 @@
             // }
         function gameplay(){
             rd();
-            lv();
             tinhdiem();
+            lv();
         }
         function rd() {
+            var x = Math.random() * (400 - wh);
+            var y = Math.random() * (400 - wh);
             wh=wh-20;
             if(wh<=20){
                 wh=20;
             }
-            var x = Math.random() * (400 - wh);
-            var y = Math.random() * (400 - wh);
             var sx = x + "px";
             var sy = y + "px";
             document.getElementById('bl').style.top = sx;
@@ -77,7 +77,7 @@
        
         
         function lv(){
-            if(d==4){
+            if(d==10){
                 wh=100;
                 rd();
                 document.getElementById('paragrap').innerHTML="lv2: click";
@@ -86,7 +86,7 @@
                 event.removeEventListener('mouseover', gameplay);
                 event.addEventListener('click', gameplay);
             }
-            if(d==9){
+            if(d==20){
                 wh=100;
                 rd();
                 document.getElementById('paragrap').innerHTML="lv3: double click";
